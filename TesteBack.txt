@@ -1,0 +1,300 @@
+
+package TesteBack;
+
+import java.util.List;
+public class Principal {
+
+    public static void main(String[] args) {
+    
+        Cliente c;
+        c = new Cliente();
+        
+        c.setId_customer(1400);
+        c.setCpf_cnpj("11122233346");
+        c.setNm_customer("Fernanda De Paula");
+        c.setIs_active("Sim");
+        c.setVl_total(560);
+        c.cadastarCliente(c);
+          
+        c.setId_customer(1500);
+        c.setCpf_cnpj("11122233341");
+        c.setNm_customer("Karina Silva");
+        c.setIs_active("Sim");
+        c.setVl_total(580);
+        c.cadastarCliente(c); 
+        
+        c.setId_customer(1600);
+        c.setCpf_cnpj("11122233343");
+        c.setNm_customer("Jhonatan Vago");
+        c.setIs_active("Sim");
+        c.setVl_total(590);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(1700);
+        c.setCpf_cnpj("11122233342");
+        c.setNm_customer("Paulo José");
+        c.setIs_active("Sim");
+        c.setVl_total(600);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(1800);
+        c.setCpf_cnpj("11122233344");
+        c.setNm_customer("Ely Almeida");
+        c.setIs_active("Sim");
+        c.setVl_total(610);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(1900);
+        c.setCpf_cnpj("11122233345");
+        c.setNm_customer("Bruna Jatobá");
+        c.setIs_active("Sim");
+        c.setVl_total(620);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2000);
+        c.setCpf_cnpj("11122233346");
+        c.setNm_customer("Everson Nunes");
+        c.setIs_active("Sim");
+        c.setVl_total(630);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2100);
+        c.setCpf_cnpj("11122233346");
+        c.setNm_customer("Eliana Santos");
+        c.setIs_active("Sim");
+        c.setVl_total(500);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2200);
+        c.setCpf_cnpj("11122233346");
+        c.setNm_customer("Juciene Silva");
+        c.setIs_active("Sim");
+        c.setVl_total(550);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2300);
+        c.setCpf_cnpj("11122233347");
+        c.setNm_customer("Marry Oliveira");
+        c.setIs_active("Sim");
+        c.setVl_total(530);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2400);
+        c.setCpf_cnpj("11122233348");
+        c.setNm_customer("Beatriz Batista");
+        c.setIs_active("Sim");
+        c.setVl_total(520);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2500);
+        c.setCpf_cnpj("11122233349");
+        c.setNm_customer("Luciene Souza");
+        c.setIs_active("Sim");
+        c.setVl_total(510);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2600);
+        c.setCpf_cnpj("11122233350");
+        c.setNm_customer("Kaique Galdino");
+        c.setIs_active("Sim");
+        c.setVl_total(500);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2700);
+        c.setCpf_cnpj("11122233350");
+        c.setNm_customer("Silvio Bonfim");
+        c.setIs_active("Sim");
+        c.setVl_total(540);
+        c.cadastarCliente(c);
+        
+        c.setId_customer(2800);
+        c.setCpf_cnpj("11122233350");
+        c.setNm_customer("Wesley José");
+        c.setIs_active("Sim");
+        c.setVl_total(580);
+        c.cadastarCliente(c);
+        
+        
+        System.out.println("Média = " + c.calcularMedia());    
+            System.out.println("");
+        List<Cliente> lista;
+            
+        lista = c.consultarCliente();
+
+        System.out.println("Id_customer |  Cpf_cnpj  | nm_customer |  Vl_total");
+
+        for (int y = 0; y < lista.size(); y++)
+        {
+            c = lista.get(y);
+            System.out.println(c.getId_customer() + " | " + c.getNm_customer() 
+                    + " | " + c.getCpf_cnpj() + " | " + c.getVl_total() + " | "
+                    + c.getIs_active());
+        }             
+
+    }
+}
+
+
+
+package TesteBack;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.JOptionPane;
+
+class Cliente {
+    public int id_customer; 
+    public String cpf_cnpj;
+    public String nm_customer;
+    public String is_active;
+    public float vl_total;
+
+    public int getId_customer() {
+        return id_customer;
+    }
+
+    public void setId_customer(int id_customer) {
+        this.id_customer = id_customer;
+    }
+
+    public String getCpf_cnpj() {
+        return cpf_cnpj;
+    }
+
+    public void setCpf_cnpj(String cpf_cnpj) {
+        this.cpf_cnpj = cpf_cnpj;
+    }
+
+    public String getNm_customer() {
+        return nm_customer;
+    }
+
+    public void setNm_customer(String nm_customer) {
+        this.nm_customer = nm_customer;
+    }
+
+    public String getIs_active() {
+        return is_active;
+    }
+
+    public void setIs_active(String is_active) {
+        this.is_active = is_active;
+    }
+
+    public float getVl_total() {
+        return vl_total;
+    }
+
+    public void setVl_total(float vl_total) {
+        this.vl_total = vl_total;
+    }
+    
+//______________________________________________________________________________
+        
+    String sSql;
+    Connection con;
+    PreparedStatement pstmt;
+    
+    public static Connection getConexao() {   
+        Connection conexao   = null;
+        String usuario       = "root";
+        String senha         = "1234";
+        String caminho       = "jdbc:mariadb://localhost:3306/public";
+        
+        try {
+            Class.forName("org.mariadb.jdbc.Driver");
+            conexao = DriverManager.getConnection(caminho, usuario, senha);  
+        }
+        catch ( SQLException | ClassNotFoundException erro) {
+            System.out.println("Erro efetuar conexão com o banco de dados: " + erro);     
+        }
+        return conexao;
+    }    
+    
+//__________________________________________________________________________
+    
+    public void cadastarCliente(Cliente c){
+    
+    try {
+            con = Cliente.getConexao();
+            pstmt = con.prepareStatement("INSERT INTO tb_customer_account("
+                    + " id_customer, cpf_cnpj, nm_customer, is_active, vl_total )"
+                    + " VALUES(?, ?, ?, ?, ? )");
+            pstmt.setInt(1, c.getId_customer());
+            pstmt.setString(2, c.getCpf_cnpj());
+            pstmt.setString(3, c.getNm_customer());
+            pstmt.setString(4,c.getIs_active());            
+            pstmt.setFloat(5,c.getVl_total());
+            pstmt.executeUpdate();           
+            pstmt.close();
+            con.close();
+        } 
+        catch (SQLException erro) {
+            System.out.println("Erro ao gravar cliente" + erro.getMessage());
+        } 
+}
+
+//______________________________________________________________________________
+    
+    public double calcularMedia()  {
+    double md = 0.00; 
+    ResultSet rs;
+    Cliente c = null;
+        
+    sSql = "SELECT AVG(vl_total) AS media FROM tb_customer_account "
+            + "WHERE vl_total > 560 and id_customer between 1500 and 2700 ";
+    try {
+        con = Cliente.getConexao();     
+        pstmt = con.prepareStatement(sSql);            
+        rs = pstmt.executeQuery();
+        if (rs.next()) {
+            md = rs.getDouble("media");          
+        } 
+    pstmt.close();  
+    con.close();
+    } 
+    catch (SQLException ex) {
+        JOptionPane.showMessageDialog(null, "Erro. " + ex.getMessage());
+    }
+   
+    return md;
+    }
+
+//____________________________________________________________________________
+    
+    public List<Cliente> consultarCliente() {
+        List listadeCliente = new ArrayList();
+        ResultSet rs;
+        Cliente c;
+        sSql = "SELECT id_customer, cpf_cnpj, nm_customer, is_active, vl_total"
+                    + " FROM tb_customer_account WHERE vl_total > 560 and "
+                    + "id_customer between 1500 and 2700 ORDER BY vl_total DESC";
+        try {           
+            con   = Cliente.getConexao();
+            pstmt = con.prepareStatement(sSql);
+            rs    = pstmt.executeQuery();
+        
+            while (rs.next()) {
+                c = new Cliente();
+                c.setId_customer(rs.getInt("id_customer"));
+                c.setCpf_cnpj(rs.getString("cpf_cnpj"));
+                c.setNm_customer(rs.getString("nm_customer"));
+                c.setIs_active(rs.getString("is_active"));
+                c.setVl_total(rs.getFloat("vl_total"));
+               listadeCliente.add(c);    
+            } 
+            rs.close();
+            pstmt.close();
+            con.close();
+        } 
+        catch (SQLException erro) {
+            System.out.println("Erro." + erro.getMessage());
+        } 
+        return listadeCliente;
+    }
+}
