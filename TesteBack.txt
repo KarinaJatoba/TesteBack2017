@@ -32,7 +32,7 @@ public class Principal {
         
         c.setId_customer(1700);
         c.setCpf_cnpj("11122233342");
-        c.setNm_customer("Paulo JosÈ");
+        c.setNm_customer("Paulo Jos√©");
         c.setIs_active("Sim");
         c.setVl_total(600);
         c.cadastarCliente(c);
@@ -46,7 +46,7 @@ public class Principal {
         
         c.setId_customer(1900);
         c.setCpf_cnpj("11122233345");
-        c.setNm_customer("Bruna Jatob·");
+        c.setNm_customer("Bruna Jatob√°");
         c.setIs_active("Sim");
         c.setVl_total(620);
         c.cadastarCliente(c);
@@ -109,13 +109,13 @@ public class Principal {
         
         c.setId_customer(2800);
         c.setCpf_cnpj("11122233350");
-        c.setNm_customer("Wesley JosÈ");
+        c.setNm_customer("Wesley Jos√©");
         c.setIs_active("Sim");
         c.setVl_total(580);
         c.cadastarCliente(c);
         
         
-        System.out.println("MÈdia = " + c.calcularMedia());    
+        System.out.println("M√©dia = " + c.calcularMedia());    
             System.out.println("");
         List<Cliente> lista;
             
@@ -148,11 +148,11 @@ import java.util.List;
 import javax.swing.JOptionPane;
 
 class Cliente {
-    public int id_customer; 
-    public String cpf_cnpj;
-    public String nm_customer;
-    public String is_active;
-    public float vl_total;
+    private int id_customer; 
+    private String cpf_cnpj;
+    private String nm_customer;
+    private String is_active;
+    private float vl_total;
 
     public int getId_customer() {
         return id_customer;
@@ -211,7 +211,7 @@ class Cliente {
             conexao = DriverManager.getConnection(caminho, usuario, senha);  
         }
         catch ( SQLException | ClassNotFoundException erro) {
-            System.out.println("Erro efetuar conex„o com o banco de dados: " + erro);     
+            System.out.println("Erro efetuar conex√£o com o banco de dados: " + erro);     
         }
         return conexao;
     }    
